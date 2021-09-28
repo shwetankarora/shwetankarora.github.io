@@ -1,0 +1,134 @@
+---
+layout: default2
+title: PLUGINS
+permalink: /plugins2/
+---
+
+
+
+<div id="container_0" class="grid-container">
+        
+        
+        
+        <div class="grid-100">
+            
+            <div class="overlay2">
+                <video autoplay loop muted id="bgvid">
+                    <source src="../images/video.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+                <a href="#" onclick="closeLightbox()">
+                    <div style="position: relative; border: 1px solid white; width: 50px; height: 50px; float: right; margin: 10px; z-index: 1000;">
+                    </div>
+                </a>
+            </div>
+            
+            <div style="position: absolute; top: 25%; left: 26%; width: 650px; height: 260px; border-left: 1px solid white; border-right: 1px solid white; z-index:100;">
+            </div>
+            
+                <div class="content">
+                    <div class="grid">
+					<figure class="effect-ming">
+						<img src="../images/img/9.jpg" style="" alt="img09"/>
+						<figcaption>
+							<h2>Funny <span>Ming</span></h2>
+							<p>Ming sits.</p>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-ming">
+						<img src="../images/img/8.jpg" alt="img08"/>
+						<figcaption>
+							<h2>Funny <span>Ming</span></h2>
+							<p>Ming sits.</p>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+                    <figure class="effect-ming">
+						<img src="../images/img/9.jpg" alt="img09"/>
+						<figcaption>
+							<h2>Funny <span>Ming</span></h2>
+							<p>Ming sits.</p>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-ming">
+						<img src="../images/img/8.jpg" alt="img08"/>
+						<figcaption>
+							<h2>Funny <span>Ming</span></h2>
+							<p>Ming sits.</p>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+				    </div>
+                </div>
+            
+            
+            
+        </div>
+
+        
+        
+</div>
+
+
+<script type="text/javascript">
+    
+    var elem = $('.overlay2');
+    var closeButton = elem.children().eq(2);
+    closeButton.css('visibility','visible');
+    closeButton.toggle();
+    
+    var grid = $('.grid');
+    
+    var gridMaxWid = grid.css('max-width');
+    
+    var active,maxWid,maxHei,wid,hei;
+    
+    var openLightbox = function(e){
+        
+        active = $(event.target).parents().eq(1);
+        
+        grid.children().filter(function(){
+            return $(this)[0] != active[0]
+        }).toggle();
+        
+        maxWid = active.css('max-width');
+        maxHei = active.css('max-height');
+        wid = active.css('width');
+        hei = active.css('height');
+        
+        active.css('max-width',1000);
+        active.css('max-height',1000);
+        active.css('width','60%');
+        active.css('height','100%');
+        
+        grid.css('max-width',1000);
+        grid.css('left','19.4%');
+        
+        closeButton.toggle();
+        //set the position
+        
+    }
+    
+    var closeLightbox = function(){
+        
+        //reverting the changes
+        
+        grid.children().filter(function(){
+            return $(this)[0] != active[0]
+        }).toggle();
+        
+        
+        active.css('max-width',maxWid);
+        active.css('max-height',maxHei);
+        active.css('width',wid);
+        active.css('height',hei);
+        
+        grid.css('max-width',gridMaxWid);
+        grid.css('left','auto');
+        
+        closeButton.toggle();
+    }
+    
+</script>

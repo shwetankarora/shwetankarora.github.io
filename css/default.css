@@ -1,0 +1,56 @@
+
+#set-1 {
+	background: rgba(0,0,0,0);/*#41ab6b;*/
+}
+
+#set-2 {
+	background: #eea303;
+}
+
+#set-3 {
+	background: #f06060;
+}
+
+#set-4 {
+	background: #0e83cd;
+}
+
+#set-5 {
+	background: #702fa8;
+}
+
+#set-6 {
+	background: #64bb5d;
+}
+
+#set-7 {
+	background: #d54f30;
+}
+
+#set-8 {
+	background: #3851bc;
+}
+
+#set-9 {
+	background: #96a94b;
+}
+
+@media screen and (max-width: 800px) {
+
+	.hi-icon {
+		margin: 15px !important;
+	}
+
+	.container > section {
+		padding: 20em 1em;
+	}
+
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}

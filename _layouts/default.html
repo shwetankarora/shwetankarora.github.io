@@ -2,20 +2,125 @@
 <html>
 
   {% include head.html %}
+    
+  <body>
+      
+      <div id="mainContainer">
+        <video autoplay loop id="bgvid">
+            <source src="../images/video.mp4" type="video/mp4">
+        </video>
+      <div id="container_1" class="grid-container">
+          
+        <div id="headerLogo" class="grid-80">
+            <img id="logo" src="../images/logo2.png" alt="logo" href="#">
+        </div>
+          
+          
+        <div id="shareIcons" class="grid-20">
+            
+            <div id="closed">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-compress fa-stack-2x"></i>
+                <i class="fa fa-expand fa-stack-2x"></i>
+            </span>
+            </div>
+            
+            <div id="revealedIcons">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x"></i>
+            </span>
+            </div>
+         
+        </div>
+          
+      
+      </div>          
+      {{ content }}
 
 
-    <body id="page-top" class="index">
-
-    {% include header.html %}
-    {% include services.html %}
-    {% include portfolio_grid.html %}
-    {% include about.html %}
-    {% include team.html %}
-    {% include clients.html %}
-    {% include contact.html %}
     {% include footer.html %}
-    {% include modals.html %}
-    {% include js.html %}
 
-    </body>
+      </div>
+      
+      <!-- scripts -->
+      <script src="../css/GammaGallery/js/jquery.masonry.min.js"></script>
+      <script src="../css/GammaGallery/js/jquery.history.js"></script>
+      <script src="../css/GammaGallery/js/js-url.min.js"></script>
+      <script src="../css/GammaGallery/js/jquerypp.custom.js"></script>
+      <script src="../css/GammaGallery/js/gamma.js"></script>
+      
+      
+      
+      <script type="text/javascript">
+			
+			$(function() {
+
+				var GammaSettings = {
+						// order is important!
+						viewport : [ {
+							width : 1200,
+							columns : 5
+						}, {
+							width : 900,
+							columns : 4
+						}, {
+							width : 500,
+							columns : 3
+						}, { 
+							width : 320,
+							columns : 2
+						}, { 
+							width : 0,
+							columns : 2
+						} ]
+				};
+
+				Gamma.init( GammaSettings, fncallback );
+
+
+				// Example how to add more items (just a dummy):
+
+				var page = 0,
+					items = ['<li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Sky high</h3>" data-max-width="1800" data-max-height="1350"><div data-src="images/xxxlarge/3.jpg" data-min-width="1300"></div><div data-src="images/xxlarge/3.jpg" data-min-width="1000"></div><div data-src="images/xlarge/3.jpg" data-min-width="700"></div><div data-src="images/large/3.jpg" data-min-width="300"></div><div data-src="images/medium/3.jpg" data-min-width="200"></div><div data-src="images/small/3.jpg" data-min-width="140"></div><div data-src="images/xsmall/3.jpg"></div><noscript><img src="images/xsmall/3.jpg" alt="img03"/></noscript></div></li>']
+
+				function fncallback() {
+
+					$( '#loadmore' ).show().on( 'click', function() {
+
+						++page;
+						var newitems = items[page-1]
+						if( page <= 1 ) {
+							
+							Gamma.add( $( newitems ) );
+
+						}
+						if( page === 1 ) {
+
+							$( this ).remove();
+
+						}
+
+					} );
+
+				}
+
+			});
+
+		</script>
+      
+  </body>
+
 </html>

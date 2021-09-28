@@ -1,0 +1,1092 @@
+/* fonts import */
+@font-face{
+    font-family: NeotericRegular;
+    src: url("./fonts/neoteric/Neoteric Regular.ttf");
+}
+
+@font-face{
+    font-family: NeotericBold;
+    src: url("./fonts/neoteric/Neoteric Bold.ttf");
+}
+
+@font-face{
+    font-family: PoiretOne;
+    src: url("./fonts/poiret_one/PoiretOne-Regular.ttf");
+}
+
+    /* raleway fonts */
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Black.ttf");
+    font-weight: 900;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-BlackItalic.ttf");
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Bold.ttf");
+    font-weight: 700;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-ExtraLight.ttf");
+    font-weight: 200;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-ExtraLightItalic.ttf");
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Light.ttf");
+    font-weight: 300;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Medium.ttf");
+    font-weight: 500;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-MediumItalic.ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-SemiBold.ttf");
+    font-weight: 600;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Thin.ttf");
+    font-weight: 100;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-ThinItalic.ttf");
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-ExtraBold.ttf");
+    font-weight: 800;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-ExtraBoldItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face{
+    font-family: Raleway;
+    src: url("./fonts/raleway/Raleway-Regular.ttf");
+    font-weight: 400;
+}
+@font-face{
+    font-family: NovaBold;
+    src: url("./fonts/nova2/NOVABOLD.otf") format("opentype");
+}
+@font-face{
+    font-family: norwester;
+    src: url("./fonts/norwester/norwester.otf") format("opentype");
+}
+@font-face{
+    font-family: LemonMilk;
+    src: url("./fonts/LemonMilk/LemonMilk.otf") format("opentype");
+}
+
+
+    /* end */
+
+/*end*/
+
+
+html,body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:visited{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+
+video#bgvid {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+
+video#gridvid {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -50;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+}
+
+/* layout of the page:
+    mainContainer = {container_1,container_2,container_3}
+    container_1 = {headerLogo}
+    container_2 = {main}
+*/
+
+#mainContainer{
+    /*background-color: #2F2D33;*/
+    /*background-image: url("../images/backgroundMain.png");
+    background-color: rgba(41,40,44,0.8);*/
+    height: 100%;
+}
+
+#container_0{
+    height: 87%;
+    padding: 0;
+    z-index: 10;
+}
+
+
+#container_1{
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 200;
+}
+
+/*
+#container_2{
+    height: 75%;
+    padding-top: 30px;
+}
+*/
+
+#container_3{
+    position: absolute;
+    height: 13%;
+    margin: 0;
+    z-index: 1000;
+    padding: 0;
+}
+
+#container_4{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 99;
+}
+    /* header styling */
+#headerLogo{
+    background-color: inherit;
+    padding-top: 19px;
+}
+
+#logo{
+    width: 60px;
+    height: 60px;
+}
+
+#shareIcons{
+    position: relative;
+    padding-top: 20px;
+    left: 20px;
+}
+
+#facebookIcon:hover{
+    color: #405D9B;
+}
+
+#twitterIcon:hover{
+    color: #59ADEB;
+}
+
+#googleplusIcon:hover{
+    color: #D64136;
+}
+
+#revealedIcons{
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    visibility: visible;
+    float: center;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.fa-stack-2x{
+    color: #F2F2F2;
+}
+
+#closed{
+    font-size: 5px;
+    padding-left: 5px;
+    float: right;
+    color: #F2F2F2;
+}
+
+.fa-expand{
+    visibility: hidden;
+}
+
+.fa-compress{
+    visibility: visible;
+}
+    /* end */
+
+
+
+
+.full_size{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#logo_screen{
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    z-index: 90;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#logo_screen > h1{
+    position: relative;
+    font-family: LemonMilk;
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    top: 0%;
+    z-index: 100;
+}
+
+#pluginsPageHeading{
+    position: absolute;
+    font-family: LemonMilk;
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    width: 100%;
+    top: 0%;
+    z-index: 100;
+    left: 0px;
+}
+
+#elpsycongroo > h1{
+    position: relative;
+    font-family: LemonMilk;
+    color: #f2f2f2;
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: 200;
+    top: 0%;
+    z-index: 100;
+}
+
+#elpsycongroo > p{
+    position: relative;
+    font-family: raleway;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 0px 180px 0px 180px;
+    font-weight: 200;
+    z-index: 100;
+}
+
+#coming_soon{
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signUp{
+    font-family: raleway;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.signUp > h1{
+    font-family: raleway;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #f2f2f2
+}
+
+#signUp > #inp{
+    display: inline-block;
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.coming_soon_text{
+    top: 40%;
+    position: relative;
+    font-family: raleway;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+/*
+#logo_screen > img{
+    position: relative;
+    top: 100px;
+    width: 50px;
+    z-index: 100;
+}*/
+
+
+#scrollIcon{
+    position: absolute;
+    width: 400px;
+    left: 2%;
+    bottom: 60%;
+}
+
+#scrollIcon > img{
+    position: fixed;
+    width: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#scrollIcon > span{
+    position: absolute;
+    top: 8px;
+    left: 22px;
+    font-family: raleway;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 9px;
+    color: #fff;
+}
+
+#shareIcon{
+    position: absolute;
+    right: 3%;
+    bottom: 20%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#shareIcon > span{
+    font-family: raleway;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 9px;
+    color: #fff;
+    z-index: 100;
+}
+
+#shareIcons{
+    display: inline-block;
+}
+
+#shareIcons > span{
+    font-family: raleway;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 9px;
+    color: #fff;
+    z-index: 100;
+}
+
+.overlay_new{
+    position: absolute;
+    background: rgba(135,134,137,0.2);
+    width:100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#first_screen{
+    position: relative;
+    z-index: 99;
+}
+
+#first_screen > .grid-50{
+    text-align: center;
+    height: 100%;
+}
+
+#first_screen > .grid-25{
+    height: 100%;
+}
+
+#content_box4{
+    position: relative;
+    width: 60%;
+    height: 60%;
+    top: 25%;
+    margin: 0 auto;
+}
+
+#content_box3{
+    position: relative;
+    width: 60%;
+    height: 30%;
+    top: 40%;
+    margin: 0 auto;
+}
+
+#content_box2{
+    position: relative;
+    width: 60%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+#main{
+    position: relative;
+    background-color: inherit;
+    margin-top: 30px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+.buttonn{
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px 40px 1px 1px;
+    border-color: #95F22E;
+    color: #fff;
+    background-color: #072B06;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+#mainButton{
+    padding-top: 6%;
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* end */
+
+/* contents of #main */
+#tagline{
+    font-family: NovaBold;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#separator{
+    border-top: 3px solid #95F22E;
+    border-bottom: 3px solid #072B06;
+    height: 0;
+    width: 15%;
+    margin: 0 auto 0 auto;
+
+}
+
+#tg_part_1{
+    font-family: LemonMilk;
+    font-size: 60px;
+    color: #FFF;
+}
+
+#tg_part_2{
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #DFEBDF;
+}
+
+#tg_part_3{
+    font-family: Raleway;
+    font-size: 17px;
+    font-weight: 500;
+    color: #DFEBDF;
+}
+
+
+.frame {
+    padding: 0;
+    width: 80%;
+    height: 450px;
+    text-align: left;
+}
+
+.frame .slidee {
+    margin: 0;
+    padding: 1em;
+}
+
+.scrollbar { position: absolute; width: 2px; left: 90%; top: 14%;}
+.scrollbar .handle {
+    width: 100%;
+    height: 435px;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+}
+
+.Heading{
+    font-family: Raleway;
+    font-size: 30px;
+    color: #E2E8DF;
+    font-style: normal;
+    font-weight: 200;
+}
+
+
+#alignThings{
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+
+#navigator{
+    position: fixed;
+    bottom: 2%;
+    left: 0%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 1000;
+}
+
+#svgContainer{
+    width: 28%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#navSvg{
+    z-index: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#navLabel{
+    position: relative;
+    top: 10px;
+    left: -50%;
+    z-index: 10;
+    font-family: Raleway;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #95F22E;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#navLabelGroup{
+    position: relative;
+    display: table;
+    z-index: inherit;
+}
+
+#navLabelGroup > i {
+    transform: translateX(-40%);
+}
+
+#navLabelGroup > span{
+    position: relative;
+    display: inline-block;
+    transform: translateX(-4%);
+}
+
+#contactForm{
+    width: 100%;
+    margin-top: 50px;
+}
+
+input{
+    resize: none;
+    width: 450px;
+    font-family: Raleway;
+    font-size: 20px;
+    border: 0;
+    background: rgba(0,0,0,0);
+    color: #6A696B;
+}
+
+textarea{
+    resize: none;
+    width: 450px;
+    font-family: Raleway;
+    font-size: 20px;
+    border: 0;
+    background: rgba(0,0,0,0);
+    color: #6A696B;
+
+}
+
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.addBorder{
+    border-bottom: 1px solid #6A696B;
+}
+
+#formContainer{
+    margin-top: 20px;
+    padding-bottom  : 10px;
+    width: 450px;
+}
+
+
+#content{
+    font-family: Raleway;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#content > h1{
+    color: #fff;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+#content > p{
+    color: #7A8487;/*#6A696C;*/
+    font-weight: 300;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.grid-item{
+    width: 100px;
+}
+.grid-item--width2{
+    width: 200px
+}
+
+
+
+#footerButton{
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: #072B06;
+    background-color: #072B06;
+}
+
+#footerText{
+    font-family: Raleway;
+    font-size: 25px;
+    font-weight: 100;
+    color: #fff;
+}
+
+.heading{
+    position: relative;
+    color: #fff;
+    font-family: LemonMilk;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+.shortdesc{
+    position: relative;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+.pluginbutton{
+    position: relative;
+    padding-top: 20%;
+}
+
+.centerAlign{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.mainBlock{
+    position: relative;
+    margin-top: 10%;
+    z-index: 20;
+}
+
+.pluginsBorder{
+    position: absolute; 
+    top: 15%; 
+    left: 50%; 
+    width: 90%; 
+    height: 70%; 
+    border-left: 1px solid white; 
+    border-right: 1px solid white; 
+    z-index:100; 
+    transform: translateX(-50%)
+}
+
+.overlay{
+    position: relative;
+    background-color: rgba(255,255,255,0.06);
+    width:100%;
+    z-index: 1000;
+    padding-top: 55%;
+}
+
+.overlay2{
+    position: relative;
+    width: 60%;
+    margin: 1% auto -32%;
+    overflow: hidden;
+    padding: 0;
+    z-index: 10;
+    top: 111px;
+}
+
+.overlay2 video{
+    position: absolute;
+    left: -42%;/*33.5*/
+    top: -13.5%;
+    filter:blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.frontvid{
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.content {
+	margin: 0 auto;
+    z-index: 100;
+    height: inherit;
+}
+
+.content > h2 {
+	margin: 0;
+	padding: 4em 1% 0;
+	color: #484B54;
+	font-weight: 800;
+	font-size: 1.5em;
+}
+
+.content > h2:first-child {
+	padding-top: 0em;
+}
+
+#bigTriangle{
+    position: absolute;
+    top: 0;
+}
+
+#container_preview{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    top: 0%;
+}
+
+#prev_image{
+    float: left;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+#prev_image{
+    float: left;
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+}
+
+div.text {
+    position: relative;
+    top: 20%;
+}
+
+div.text > p {
+    top: 125%;
+    position: absolute;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 1.2em;
+    font-weight: 200;
+    visibility: hidden;
+}
+
+div.text > h1{
+    position: relative;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    visibility: hidden;
+}
+
+.size50:before{
+    font-size: 50px;
+}
+
+.size45:before{
+    font-size: 45px;
+}
+
+.flip-container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    top: 5%;
+    perspective: 1000px;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper{
+		transform: rotateY(180deg);
+}
+
+
+.flipper{
+    position: relative;
+    text-align: center;
+    height: 100%;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front{
+    z-index: 3;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+
+.back{
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+.f-c{
+    position: relative;
+    perspective: 1000px;
+}
+.f{
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+.fr,.ba{
+    position: absolute;
+    backface-visibility: hidden;
+}
+.f-c:hover .f, .f-c.hover .f, .f{
+		transform: rotateY(180deg);
+}
+.fr{
+    z-index: 3;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+.ba{
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+#status{
+    font-family: raleway;
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.7em;
+    letter-spacing: 2px;
+}
+
+#queryBox{
+    font-family: raleway;
+    font-size: 1em;
+    background-color: rgba(242,242,242,0.1);
+    color: #f2f2f2;
+    padding: 30px;
+    overflow: hidden;
+    line-height: 30px
+}
+
+#queryBoxParent{
+    position: absolute;
+    font-family: raleway;
+    text-align: center;
+    top: 20%;
+    height: 56%;
+    left: 5%;
+}
+
+#comment{
+    display: block;
+    font-family: raleway;
+    letter-spacing: 2px;
+    font-size: 0.4em;
+    color: #fff;
+    margin: 10px;
+}
+
+#statusBox1, #statusBox2, #statusBox3{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#statusBox1 > h1, #statusBox2 > h1, #statusBox3 > h1{
+    font-family: LemonMilk;
+    font-size: 3.5em;
+    color: #41ab6b;
+    margin: 0;
+}
+
+#statusBox1 > p, #statusBox2 > p, #statusBox3 > p{
+    color: #f2f2f2;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.resultScreen{
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    font-family: raleway;
+    font-size: 1.1em;
+    color: #000;
+    text-align: center;
+}
+
+.ti-close{
+    font-size: 2.3em; 
+    color: #fff;
+}
+
+/* media queries */
+@media only screen and (max-width: 1024px){
+    #scrollIcon > span{
+        letter-spacing: 2px;
+        font-size: 7px;
+    }
+    #shareIcon > span{
+        font-size: 7px;
+    }
+    #shareIcons > span{
+        font-size: 7px;
+    }
+    #shareIcon{
+        bottom: 30%;
+    }
+    #navLabel{
+        font-size: 7px;
+        top: 4px;
+        letter-spacing: 2px;
+    }
+    #elpsycongroo > h1{
+        font-size: 55px;
+    }
+    .effect-ming > figcaption > h2{
+        font-size: 0.9em;
+    }
+    div.text > p{
+        font-size: 0.96em;
+    }
+    .ti-close{
+        font-size: 1.7em;
+    }
+    /* setting the font-sizes of main headings*/
+    #elpsycongroo > p{
+        font-size: 0.9em;
+    }
+    #tg_part_2{
+        font-size: 20px;
+    }
+    #tg_part_1{
+        font-size: 55px;
+    }
+    #pluginsPageHeading{
+        font-size: 55px;
+    }
+    #logo_screen > h1{
+        font-size: 55px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    /*for all*/
+}

@@ -1,0 +1,275 @@
+---
+layout: main
+title: Plugins
+permalink: /plugins/
+---
+
+<!-- container_4 , grid -->
+
+
+<div id="container_4" class="grid-container">
+        
+        
+        
+        <div class="grid-100">
+            
+            <div class="overlay2">
+                <video autoplay loop muted id="bgvid">
+                    <source src="../images/video.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+                <a href="#" onclick="closeLightbox()">
+                    <div class="icon-container" style="position: relative; float: right; z-index: 1000; padding: 15px;">
+                        <span class="ti-close" style="font-size: 2.3em; color: #fff;"></span>
+                    </div>
+                </a>
+                <div id="container_preview" class="grid-container" style="padding: 0;">
+                    <div id="prev_image" class="grid-100" style="padding: 0; height: 100%;">
+                        <div id="prev_img_child" style="width: 100%; height: 100%; overflow: hidden;"></div>
+                    </div>
+                    <div id="prev_text" class="grid-100" style="position: absolute; left: 50%; width: 50%; height: 100%;">
+                        <div class="text">
+                            <p id="Flubber">
+                                Flubber is zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.
+                            </p>
+                            <p id="Aether">
+                                Aether is zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.
+                            </p>
+                            <p id="Crave">
+                                Crave is zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.
+                            </p>
+                            <p id="Hacknet">
+                                Hacknet is zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <h1 id="pluginsPageHeading" class="animated flipInX" data-wow-delay="500ms" data-wow-duration="500ms">
+                    PLUGINS
+                </h1>
+            </div>
+            
+            <div class="pluginsBorder" style="position: absolute; top: 30%; left: 26%; width: 650px; height: 260px; border-left: 1px solid white; border-right: 1px solid white; z-index:100;">
+            </div>
+            
+            
+                <div class="content">
+                    <div class="grid" style="top: 35px;">
+					<figure class="effect-ming">
+						<img src="../images/img/logo9.png" style="" alt="img09"/>
+						<figcaption>
+							<h2>Flubber</h2>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-ming">
+						<img src="../images/img/logo22.png" alt="img08"/>
+						<figcaption>
+							<h2>Aether</h2>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+                    <figure class="effect-ming">
+						<img src="../images/img/logo24.png" alt="img09"/>
+						<figcaption>
+							<h2>Crave</h2>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-ming">
+						<img src="../images/img/logo11.png" alt="img08"/>
+						<figcaption>
+							<h2>Hacknet</h2>
+							<a href="#" onclick="openLightbox()">View more</a>
+						</figcaption>			
+					</figure>
+				    </div>
+                </div>
+            
+            
+            
+        </div>
+
+        
+        
+</div>
+
+<div id="container_0"></div>
+
+
+<script type="text/javascript">
+    $('html,body').css('overflow-y','hidden');
+</script>
+
+<script type="text/javascript">
+    
+    var elem = $('.overlay2');
+    var closeButton = elem.children().eq(2);
+    var lightTextP = $('.text > p');
+    var lightTexth = $('#pluginsPageHeading');
+    var iter = 0;
+    closeButton.css('visibility','visible');
+    closeButton.toggle();
+    
+    var grid = $('.grid');
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    
+    var preview = $('.overlay2');
+    var left = preview.css('left');
+    var topd = preview.css('top');
+    var width = preview.css('width');
+    var height = preview.css('height');
+    var borderLeft,borderwidth,borderBorderR,borderTop;
+    var borders = $('.pluginsBorder');
+    var closeButtonDuration = 400;
+    var gridDuration = 400;
+    var borderDuration = 500;
+    
+    var openLightbox = function(e){
+        
+        active = $(event.target).parents().eq(1);
+        var heading = active.children().eq(1).children().eq(0).text();
+        lightTexth.removeClass('flipInX');
+        lightTexth.addClass('flipOutX');
+        lightTexth.one(animationEnd,function(){
+            lightTexth.html(heading);
+            lightTexth.removeClass('flipOutX');
+            lightTexth.addClass('flipInX');
+        })
+        
+        lightTextP.each(function(index){
+            if($(this).attr('id') == heading){
+                iter = index;
+                console.log($(this));
+            }
+        });
+        
+        grid.children().addClass('animated zoomOut');
+        
+        var prev_image = $('#prev_img_child');
+        var prev_text = $('#prev_text');
+        
+        var preview = $('.overlay2');
+        /*
+        var foot = $('#navSvg');
+        var elem = $('#navLabelGroup')
+        foot.attr('class','animated slideOutDown');
+        elem.attr('class','animated slideOutDown');
+        */
+        
+        preview.animate({
+            left: "12%",
+            top: "20.5%",
+            width: "76%",
+            height: "58%"
+            },{
+            duration: gridDuration,
+            easing: "easeInQuart",
+            queue: true,
+            start: function(){
+                    borderLeft = borders.css('left');
+                    borderTop = borders.css('top');
+                    borderBorderR = borders.css('border-right');
+                    borders.animate({
+                        height: "toggle",
+                        top: "50%"
+                    },{
+                        duration: 500,
+                        easing: "easeOutQuart",
+                        queue: true,
+                    });
+                },
+            complete: function(){
+                closeButton.toggle({
+                    duration: closeButtonDuration,
+                    easing: "linear",
+                });
+                var image = active.children().eq(0).clone();
+                image.addClass('animated slideInLeft');
+                image.css({
+                    'animation-duration': '500ms',
+                    '-webkit-animation-duration': '500ms',
+                    '-ms-animation-duration': '500ms',
+                    '-moz-animation-duration': '500ms',
+                    '-o-animation-duration': '500ms',
+                });
+                prev_image.append(image);
+                console.log(lightTextP[iter]);
+                $(lightTextP[iter]).css('visibility','visible');
+                $(lightTextP[iter]).removeClass('fadeOut');
+                $(lightTextP[iter]).css({'-webkit-animation-delay':'500ms','animation-delay':'500ms'});
+                $(lightTextP[iter]).addClass('animated fadeIn');
+                },
+             }
+        );
+        
+        
+        //set the position
+        
+    }
+    
+    var closeLightbox = function(){
+        
+        //reverting the changes
+        
+        var preview = $('.overlay2');
+        var prev_image = $('#prev_img_child').children().eq(0);
+        var prev_text = $('#prev_text').children().eq(0);
+        
+        closeButton.toggle();
+        
+        prev_image.removeClass('slideInLeft');
+        
+        $(lightTextP[iter]).removeClass('fadeIn');
+        $(lightTextP[iter]).addClass('animated fadeOut');
+        $(lightTextP[iter]).css({'-webkit-animation-delay':'10ms','animation-delay':'10ms'});
+        lightTexth.removeClass('flipInX');
+        lightTexth.addClass('flipOutX');
+        lightTexth.one(animationEnd,function(){
+            lightTexth.html('PLUGINS');
+            lightTexth.removeClass('flipOutX');
+            lightTexth.addClass('flipInX');
+        })
+        
+        iter = 0;
+                
+        grid.css('visibility','visible');
+        prev_image.addClass('animated slideOutLeft').one(animationEnd,function(){
+            preview.animate({
+            left: left,
+            top: topd,
+            width: width,
+            height: height,
+            },{
+            duration: 600,
+            easing: "easeInQuart",
+            queue: true,
+            complete: function(){
+                borders.animate({
+                    height: "toggle",
+                    top: borderTop,
+                },{
+                    duration: borderDuration,
+                    easing: "easeOutQuart",
+                    queue: true,
+                }
+                );
+                grid.children().removeClass('animated zoomOut');
+                grid.children().addClass('animated zoomIn');
+                prev_image.remove();
+                var foot = $('#navSvg');
+                var elem = $('#navLabelGroup')
+                foot.attr('class','animated slideInUp');
+                elem.attr('class','animated slideInUp');
+                
+                }
+             }
+            );
+        });
+        
+    }
+    
+</script>

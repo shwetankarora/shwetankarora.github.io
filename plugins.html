@@ -1,0 +1,492 @@
+---
+layout: default2
+title: PLUGINS
+permalink: /plugins3/
+---
+
+<div id="container_4" class="grid-container" style="overflow-y: visible;">
+    
+{% for plugin in site.posts limit:4 offset:4 %}
+    
+    <div id="main" class="grid-100 {{ plugin.title }} leftPane">
+        <div class="grid-50" style="padding: 0">
+            <div class="overlay" style="background-color: #252E27;"></div>
+            <div class="mainBlock">
+            <h1 class="heading">{{ plugin.title }}</h1>
+            <div class="centerAlign animated fadeIn">
+            <p class="shortdesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+                
+            <div id="revealedIcons">
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-linkedin fa-stack-1x"></i>
+            </span>
+            </div>
+                
+            <div class="pluginbutton">
+                <a class="pluginbutton" style="positon: relative; z-index: 20;"><img class="animated rotateIn" src="../images/logo2.png" style="width: 100px; height: 100px;" /></a>
+            </div>
+            <div class="expandOnLoad">
+            </div>
+            </div>
+        </div>
+        <div class="grid-50" style="position: relative; padding: 0; visibility: hidden; z-index: 10;">
+        </div>
+    </div>
+    
+{% endfor %}
+    
+{% for plugin in site.posts limit:4 %}
+    
+    <div id="main" class="grid-100 {{ plugin.title }} rightPane">
+        <div class="grid-50" style="position: relative; padding: 0; visibility: hidden; z-index: 10;">
+            <p style="visibility: hidden;">hello</p>
+        </div>
+        <div class="grid-50" style="padding: 0;">
+            <div class="overlay" style=" background: -moz-radial-gradient(center, ellipse cover, rgba(0,126,16,1) 1%, rgba(64,127,0,1) 97%, rgba(67,128,0,1) 100%);"></div>
+            <div class="mainBlock">
+            <h1 class="heading">{{ plugin.title }}</h1>
+            <div class="centerAlign animated fadeIn">
+            <p class="shortdesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+                
+            <div id="revealedIcons">
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-lg animated zoomIn">
+                <i class="fa fa-linkedin fa-stack-1x"></i>
+            </span>
+            </div>
+                
+            
+            <div class="pluginbutton">
+                <a class="pluginbutton" style="positon: relative; z-index: 20;"><img class="animated rotateIn" src="../images/logo2.png" style="width: 100px; height: 100px;" /></a>
+            </div>
+                
+            <div class="expandOnLoad">
+            </div>
+            </div>
+        </div>
+    </div>
+    
+{% endfor %}
+
+</div>
+
+
+<div id="container_0"></div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    // disable scroll and enable scroll
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+    
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;  
+    }
+    
+    
+    function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+        }
+    }
+
+
+    function disableScroll() {
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove  = preventDefault; // mobile
+    document.onkeydown  = preventDefaultForScrollKeys;
+    }
+
+    
+    function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+    window.ontouchmove = null;  
+    document.onkeydown = null;  
+    }
+    
+    /*
+    window.onbeforeunload = function(){
+        window.scrollTo(0,0);
+        return null;
+    }*/
+    
+    window.onload = function(){
+        
+        
+        //animation on hover
+        $('.pluginbutton').mouseenter(function(){
+            var clas = $(this).parents().eq(3).attr('class').split(' ')[1];
+            if(clas !== 'undefined'){
+                $('.'+clas).find('.overlay').animate({
+                    opacity: 1
+                },100);
+            }
+        });
+        
+        $('.pluginbutton').mouseleave(function(){
+            var clas = $(this).parents().eq(3).attr('class').split(' ')[1];
+            if(clas !== 'undefined'){
+                $('.'+clas).find('.overlay').animate({
+                    opacity: 0.7
+                },100);
+            }
+        });
+        
+        var plugins = $(".grid-100");
+        plugins.each(function(index){
+            $(this).css("position","absolute");
+        });
+        
+        var group_size = Math.floor(plugins.length/2);
+        
+        // adjusting first group
+        
+        var leftElems = [], rightElems = [];
+        var startLeft, startRight;
+        percentage = (group_size-1)*100*(-1)
+        for( var i = 0; i < group_size; i++){
+            leftElems.push($(plugins[i]));
+            var name = plugins[i].getAttribute('class').split(' ')[1];
+            var temp = $("."+name)
+            temp.css('top',percentage+'%');
+            percentage = percentage + 100;
+            if( i == group_size - 1){
+                temp.addClass('active');
+                startLeft = $(plugins[i]);
+            }
+            else{
+                temp.addClass('dormant');
+            }
+        }
+        
+        percentage -= 100;
+        for( var i = group_size; i < 2*group_size; i++){
+            rightElems.push($(plugins[i]));
+            var name = plugins[i].getAttribute('class').split(' ')[1];
+            var temp = $("."+name)
+            temp.css('top',percentage+'%');
+            percentage = percentage + 100;
+            if( i == group_size ){
+                temp.addClass('active');
+                startRight = $(plugins[i])
+            }
+            else{
+                temp.addClass('dormant');
+            }
+        }
+        
+    // listen to onscroll event and do the animation
+        
+        var position = $(window).scrollTop()
+                     
+        var handleScroll = function(){
+            
+            // determine which is in the view area
+            
+            AnimOps = {
+                duration: 1000,
+                easing: "easeInOutSine",
+                queue: false,
+            }
+            
+            
+            var scroll = $(window).scrollTop()
+            
+            //we have startLeft and startRight, leftElems and rightElems, plugins(all Elems)
+            if( scroll > position ){
+                //scroll down
+                
+                
+                //getting elements and adding or removing classes
+                var elems = calculatenextElem(rightElems,'right');
+                var current = elems[0];
+                var next = elems[1];
+                current.removeClass('active').removeClass('dormant');
+                next.removeClass('active').removeClass('dormant');
+                current.addClass('dormant');
+                next.addClass('active');
+                //done
+                
+                var eleminfocus
+                for( var elem in leftElems ){
+                    console.log(parseInt(leftElems[elem].css('top')),$(window).scrollTop())
+                    if( parseInt(leftElems[elem].css('top')) + 30 > $(window).scrollTop() ){
+                        eleminfocus = leftElems[elem];
+                        break;
+                    }
+                }
+                
+                
+                if( eleminfocus === leftElems[0] ){
+                    console.log(eleminfocus)
+                    AnimOps['start'] = function(){
+                        // do sth
+                        var num = '-='+2*100*(leftElems.length - 1)+'%'
+                        $('.leftPane').animate({
+                            top: num
+                        },1000,'easeInOutSine');
+                    }
+                }
+                else{
+                    AnimOps['start'] = function(){
+                        //scroll down the left pane two blocks with animation
+                        $('.leftPane').animate({
+                            top: "+=200%"
+                        },1000,'easeInOutSine');
+                    }
+                }
+                
+                
+                AnimOps['complete'] = function(){
+                    setTimeout(function(){
+                        enableScroll();
+                        $(window).on('scroll',function(){$(window).off('scroll');
+                        disableScroll();
+                        handleScroll();
+                    })
+                    },1);
+                    position = $(window).scrollTop();
+                    if($(window).scrollTop() + $(window).height() > $(document).height() - 10 ) {
+                        console.log("bottom");
+                    }
+                    
+                }
+                
+                
+                $('html').animate({
+                    scrollTop: next.css('top')
+                },AnimOps);
+                
+            }
+            else if(scroll < position){
+                //console.log(scroll,position);
+                
+                
+                //getting elements and adding or removing classes
+                var elems = calculateprevElem(rightElems,'right');
+                var current = elems[0];
+                var prev = elems[1];
+                current.removeClass('active').removeClass('dormant');
+                prev.removeClass('active').removeClass('dormant');
+                current.addClass('dormant');
+                prev.addClass('active');
+                //done
+                
+                
+                AnimOps['start'] = function(){
+                    //scroll down the left pane two blocks with animation
+                    $('.leftPane').animate({
+                        top: "-=200%"
+                    },1000,'easeInOutSine');
+                }
+                
+                
+                
+                AnimOps['complete'] = function(){
+                    setTimeout(function(){
+                        enableScroll();
+                        $(window).on('scroll',function(){$(window).off('scroll');
+                        disableScroll();
+                        handleScroll();
+                    })
+                    },1);
+                    position = $(window).scrollTop();
+                    if($(window).scrollTop() == 0) {
+                        console.log("top");
+                    }
+                    
+                }
+                
+                
+                $('html').animate({
+                    scrollTop: prev.css('top')
+                },AnimOps);
+            }
+            
+        }
+        
+        
+        
+        
+        $(window).on('scroll',function(){
+            $(window).off('scroll');
+            disableScroll();
+            handleScroll();
+        });
+        
+    }
+    
+    
+    var calculatenextElem = function(names,flag){
+        var bool = false;
+        var current;
+        if( flag === 'right' ){
+            for(var name in names){
+                if(names[name][0].getAttribute('class').indexOf('active') != -1 ){
+                    current = names[name];
+                    bool = true;
+                }
+                else{
+                    if(bool == true){
+                        return {0:current,1:names[name]};
+                    }
+                }
+            }
+            if(bool == true){
+                return {0:current,1:names[0]};
+            }
+            else{
+                console.log('error');
+            }
+        }
+        else if( flag === 'left' ){
+            //wait
+        }
+    }    
+    
+    var calculateprevElem = function(names,flag){
+        var bool = false;
+        var prev,current;
+        if( flag === 'right' ){
+            for(var name in names){
+                if(names[name][0].getAttribute('class').indexOf('active') != -1 ){
+                    current = names[name];
+                    if(prev !== undefined){
+                        return {0:current,1:prev}
+                    }
+                    else{
+                        bool = true;
+                        break;
+                    }
+                }
+                else{
+                    prev = names[name];
+                }
+            }
+            if(bool == true){
+                return {0:current,1:names[names.length-1]};
+            }
+            else{
+                console.log('error');
+            }
+        }
+        else if( flag === 'left' ){
+            //wait
+        }
+    }
+</script>
+
+
+
+
+
+
+<!--
+<script type="text/javascript">
+var frame = new Sly('#frame', {
+    slidee:     '#slidee',  // Selector, DOM element, or jQuery object with DOM element representing SLIDEE.
+    horizontal: false, // Switch to horizontal mode.
+
+    // Item based navigation
+    itemNav:        null,  // Item navigation type. Can be: 'basic', 'centered', 'forceCentered'.
+    itemSelector:   null,  // Select only items that match this selector.
+    smart:          false, // Repositions the activated item to help with further navigation.
+    activateOn:     null,  // Activate an item on this event. Can be: 'click', 'mouseenter', ...
+    activateMiddle: false, // Always activate the item in the middle of the FRAME. forceCentered only.
+
+    // Scrolling
+    scrollSource: null,  // Element for catching the mouse wheel scrolling. Default is FRAME.
+    scrollBy:     15,     // Pixels or items to move per one mouse scroll. 0 to disable scrolling.
+    scrollHijack: 300,   // Milliseconds since last wheel event after which it is acceptable to hijack global scroll.
+    scrollTrap:   false, // Don't bubble scrolling when hitting scrolling limits.
+
+    // Dragging
+    dragSource:    null,  // Selector or DOM element for catching dragging events. Default is FRAME.
+    mouseDragging: false, // Enable navigation by dragging the SLIDEE with mouse cursor.
+    touchDragging: false, // Enable navigation by dragging the SLIDEE with touch events.
+    releaseSwing:  false, // Ease out on dragging swing release.
+    swingSpeed:    0.2,   // Swing synchronization speed, where: 1 = instant, 0 = infinite.
+    elasticBounds: false, // Stretch SLIDEE position limits when dragging past FRAME boundaries.
+    interactive:   null,  // Selector for special interactive elements.
+
+    // Scrollbar
+    scrollBar:     '.scrollbar',  // Selector or DOM element for scrollbar container.
+    dragHandle:    false, // Whether the scrollbar handle should be draggable.
+    dynamicHandle: false, // Scrollbar handle represents the ratio between hidden and visible content.
+    minHandleSize: 50,    // Minimal height or width (depends on sly direction) of a handle in pixels.
+    clickBar:      false, // Enable navigation by clicking on scrollbar.
+    syncSpeed:     0.5,   // Handle => SLIDEE synchronization speed, where: 1 = instant, 0 = infinite.
+
+    // Pagesbar
+    pagesBar:       null, // Selector or DOM element for pages bar container.
+    activatePageOn: null, // Event used to activate page. Can be: click, mouseenter, ...
+    pageBuilder:          // Page item generator.
+        function (index) {
+            return '<li>' + (index + 1) + '</li>';
+        },
+
+    // Navigation buttons
+    forward:  null, // Selector or DOM element for "forward movement" button.
+    backward: null, // Selector or DOM element for "backward movement" button.
+    prev:     null, // Selector or DOM element for "previous item" button.
+    next:     null, // Selector or DOM element for "next item" button.
+    prevPage: null, // Selector or DOM element for "previous page" button.
+    nextPage: null, // Selector or DOM element for "next page" button.
+
+    // Automated cycling
+    cycleBy:       null,  // Enable automatic cycling by 'items' or 'pages'.
+    cycleInterval: 5000,  // Delay between cycles in milliseconds.
+    pauseOnHover:  false, // Pause cycling when mouse hovers over the FRAME.
+    startPaused:   false, // Whether to start in paused sate.
+
+    // Mixed options
+    moveBy:        300,     // Speed in pixels per second used by forward and backward buttons.
+    speed:         0,       // Animations speed in milliseconds. 0 to disable animations.
+    easing:        'swing', // Easing for duration based (tweening) animations.
+    startAt:       null,    // Starting offset in pixels or items.
+    keyboardNavBy: null,    // Enable keyboard navigation by 'items' or 'pages'.
+
+    // Classes
+    draggedClass:  'dragged', // Class for dragged elements (like SLIDEE or scrollbar handle).
+    activeClass:   'active',  // Class for active items and pages.
+    disabledClass: 'disabled' // Class for disabled navigation elements.
+}).init();
+frame.activate(1);
+frame.reload();
+</script>
+-->

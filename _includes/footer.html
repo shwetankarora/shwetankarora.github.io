@@ -1,25 +1,335 @@
-  <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; {{ site.title }} 2014</span>
+<footer>
+
+<div id="container_3" class="grid-container">
+    
+    <div id="secondColumn" class="grid-100">
+        <div id="navigator">
+            <div id="scrollIcon" class="ba animated flipOutX">
+                <img src="../images/img/scroll.png" />
+                <span>SCROLL</span>
+            </div>
+            <div id="scrollIcon" class="fr animated flipInX" style="left: 0px; text-transform: uppercase;">
+                <span style="top: 0px;" class="glitch" data-text="Copyright © Amethyst Labs.">Copyright © Amethyst Labs.</span>
+            </div>
+            
+            <div id="shareIcon">
+                <div id="shareIcons" class="animated flipOutX">
+                    <span id="facebookIcon" style="margin: 7px; display: inline-block;"><a href="https://www.facebook.com/amethystlabs/" style="#fff"><i class="fa fa-facebook fa-lg"></i></a></span>
+                    <span id="twitterIcon" style="margin: 7px; display: inline-block"><a href="https://twitter.com/amethyst_labs" style="#fff"><i class="fa fa-twitter fa-lg"></i></a></span>
+                    <span id="googleplusIcon" style="margin: 7px; display: inline-block"><a href="https://plus.google.com/+AmethystlabsOrg" style="#fff"><i class="fa fa-google-plus fa-lg"></i></a></span>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        {% for network in site.social %}
-                        <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
+                <span id="shrIcon" class="animated flipInX" style="display: inline-block;"><i class="fa fa-share-alt fa-lg"></i></span>
+            </div>
+            
+            <div id="svgContainer">
+                <svg id="navSvg" viewbox="0 0 382 40" class="navSvg animated slideInUp" style="position: relative; display: block; margin: auto; z-index: 1000;">
+                </svg>
+                <div id="navLabelGroup" class="animated slideInUp">
+                    <i class="fa fa-caret-up" style="position: relative; vertical-align: top; font-size: 13px; color: #95F22E; z-index: 1000;"></i>
+                    <span id="navLabel">Home</span>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    
+</div>
+
+</footer>
+
+<script>
+    
+    //adding favicon and title dynamically
+    var title = "Amethyst Labs"
+    document.title = title;
+    console.log($('head'))
+    console.log(document.getElementsByTagName('head'));
+    var link = document.createElement('link');
+    link.rel = "shortcut icon"
+    link.href = "../images/favicon.png"
+    link.type = "image/x-icon"
+    document.getElementsByTagName('head')[0].appendChild(link)
+    
+    //end
+    
+    new WOW().init();
+    
+    var selectedElem;
+    
+    function footerSvg(){
+        var s = Snap("#navSvg");
+        s.attr({
+            fill: '#fff',
+            stroke: '#fff',
+            strokeWidth: 15,
+            "stroke-opacity": 0,
+        });
+        
+        var diffX = 18;
+        var x = 1;
+        var y = 40;
+        
+        var lines = [];
+        var positions = [0,33.2,66.2,99.2];
+        
+        //drawing the bigger line
+        h = -40
+        lines.push(s.path(Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+            x: x,
+            y: y,
+            dim: {
+                width: 1,
+                height: h,
+                "negative width": -1
+            }
+        })).attr({
+            fill: '#95F22E',
+        }));
+        selectedElem = lines[0];
+        
+        //drawing the complete scale from here
+        
+        for(var j=0; j<3; j++){
+    
+            // drawing four small lines
+            for(var i=0; i<6; i++){
+                x = x + diffX
+                h = -10
+                s.path(
+                    Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                        x: x,
+                        y: y,
+                        dim: {
+                            width: 1,
+                            height: h,
+                            "negative width": -1
+                        }
+                    })
+                )
+            }
+            
+            x = x + diffX; 
+            drawBigLine(x)
+        }
+    
+        for(var i = 0 ; i < lines.length ; i++){
+            var line = lines[i];
+            line.hover(function(e){
+                if(this != selectedElem){
+                    $('#navigator').css({'cursor':'pointer'});
+                    animatedUp(this);
+                }
+            },function(e){
+                if(this != selectedElem){
+                    $('#navigator').css({'cursor':'auto'});
+                    animateDown(this);
+                }
+            }
+            ).click(function(e){
+                var previousElem = selectedElem;
+                clickEventHandler(this);
+                if( previousElem != this){
+                    changePage(e,getElemNo(previousElem),getElemNo(this));
+                }
+                
+            });
+        }
+        
+        function drawBigLine(x){
+            h = -30;
+            var path = Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                x: x,
+                y: y,
+                dim: {
+                    width: 1,
+                    height: h,
+                    "negative width": -1
+                }
+            });
+            
+            lines.push(s.path(path));
+        }
+        
+        window.getElemNo = function(el){
+            for( var i = 0 ; i < lines.length ; i++ ){
+                if( el == lines[i]){
+                    return i;
+                }
+            }
+        }
+        
+        window.getElem = function(elemNo){
+            for( var i = 0 ; i < lines.length ; i++ ){
+                if(elemNo == i){
+                    return lines[i];
+                }
+            }
+        }
+        
+        window.getCurrentSelection = function(){
+            for(var i = 0 ; i < lines.length; i++){
+                if(lines[i] == selectedElem){
+                    return lines[i];
+                }
+            }
+        }
+        
+        function changeSelection(elem){
+            animatedUp(elem);
+            elem.attr({
+                'fill': '#95F22E'
+            })
+            animateDown(selectedElem);
+            selectedElem.attr({
+                'fill': '#fff'
+            })
+            selectedElem = elem;
+        }
+        
+        function animatedUp(elem){
+            // creating path
+                    var finalPath;
+                    if( elem.attr('path').indexOf('C') != -1 ){
+                        var temp = elem.attr('path').split('C')[0];
+                        var x = temp.split(',')[0].slice(1);
+                        var y = temp.split(',')[1];
+                        
+                        
+                        
+                        finalPath = Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                            x: x,
+                            y: y,
+                            dim: {
+                                width: 1,
+                                height: -40,
+                                "negative width": -1
+                            }
+                        });
+                    }
+                    else{
+                        var temp = elem.attr('path').split('h')[0];
+                        var x = temp.split(',')[0].slice(1);
+                        var y = temp.split(',')[1];
+                        
+                        
+                        
+                        finalPath = Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                            x: x,
+                            y: y,
+                            dim: {
+                                width: 1,
+                                height: -40,
+                                "negative width": -1
+                            }
+                        });
+                    }
+                    
+                    //animating
+                    elem.animate({
+                        path: finalPath,
+                    },200);
+        }
+        
+        function animateDown(elem){
+                    
+                    var initialPath;
+                    if( elem.attr('path').indexOf('C') != -1 ){
+                        var temp = elem.attr('path').split('C')[0];
+                        var x = temp.split(',')[0].slice(1);
+                        var y = temp.split(',')[1];
+                        
+                        
+                        
+                        initialPath = Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                            x: x,
+                            y: y,
+                            dim: {
+                                width: 1,
+                                height: -30,
+                                "negative width": -1
+                            }
+                        });
+                    }
+                    else{
+                        var temp = elem.attr('path').split('h')[0];
+                        var x = temp.split(',')[0].slice(1);
+                        var y = temp.split(',')[1];
+                        
+                        
+                        
+                        initialPath = Snap.format("M{x},{y}h{dim.width}v{dim.height}h{dim['negative width']}z", {
+                            x: x,
+                            y: y,
+                            dim: {
+                                width: 1,
+                                height: -30,
+                                "negative width": -1
+                            }
+                        });
+                    }
+                    
+                    elem.animate({
+                        path: initialPath,
+                    },200);
+        }
+        
+        window.clickEventHandler = function(el){
+                var elem = $('#navLabelGroup');
+                var duration = 500;
+                if(el != selectedElem){
+                    changeSelection(el);
+                    var elemNo = getElemNo(el);
+                    //animating footer caret
+                    switch(elemNo){
+                            case 0: elem.animate({
+                                        'left': positions[elemNo]+'%'
+                                    },{
+                                        'duration': duration,
+                                        'easing': 'linear',
+                                        'start': function(){
+                                            elem.children('span').html('Home');
+                                         },
+                                        'complete': function(){
+                                            
+                                        }
+                                    })
+                                    break;
+                            case 1: elem.animate({
+                                        'left': positions[elemNo]+'%'
+                                    },{
+                                        'duration': duration,
+                                        'easing': 'linear',
+                                        'start': function(){
+                                            elem.children('span').html('Grid');
+                                         },
+                                    })
+                                    break;
+                            case 2: elem.animate({
+                                        'left': positions[elemNo]+'%'
+                                    },{
+                                        'duration': duration,
+                                        'easing': 'linear',
+                                        'start': function(){
+                                            elem.children('span').html('Plugins');
+                                         },
+                                    })
+                                    break;
+                            case 3: elem.animate({
+                                        'left': positions[elemNo]+'%'
+                                    },{
+                                        'duration': duration,
+                                        'easing': 'linear',
+                                        'start': function(){
+                                            elem.children('span').html('Origin');
+                                         },
+                                    })
+                                    break;
+                    }
+                }
+        }
+        
+    }
+    
+    footerSvg();
+    
+    
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+    
+  <body>
+
+      <div id="mainContainer">
+        <img src="../images/backgroundMain.png" style="position: absolute; visibility: hidden;" />
+        <video autoplay loop muted id="bgvid">
+            <source src="../images/video.mp4" type="video/mp4">
+        </video>
+
+      {{ content }}
+
+
+    {% include footer.html %}
+
+      </div>
+
+  </body>
+
+</html>

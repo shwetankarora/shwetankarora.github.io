@@ -1,0 +1,90 @@
+---
+layout: main
+title: Origin
+permalink: /origin/
+---
+
+<!-- container_4 -->
+
+<div id="container_4" class="grid-container">
+    <video autoplay loop muted id="bgvid" class="frontvid">
+            <source src="../images/video.mp4" type="video/mp4">
+    </video>
+    <div id="overlay" class="grid-100 full_size" style="background-color: rgba(255,255,255,0.05); opacity: 0.0; position: absolute">
+    </div>
+
+    <div id="mainElem" class="grid-100 full_size" style="opacity: 1">
+        
+        <div id="shareIcon">
+            <span><i class="fa fa-share-alt fa-lg"></i></span>
+            <span></span>
+        </div>
+        
+        
+        <div class="grid-container" style="">
+            <div id="elpsycongroo" class="grid-100" style="text-align: center;">
+                <h1 style="position: relative;">
+                    ORIGIN
+                </h1>
+                <p style="text-align: left;">
+                    This idea may seem ahead of its time, because it is. None of us actually thought 
+of this idea, we were told about it. John Titor, a self proclaimed time traveller,
+posted on @channel about the grim dystopian future, to which he belonged, and wanted
+to change. In the year 2036, SERN(CERN) takes over the earth and the world goes into complete
+anarchy. John believes SERN invented time travel in 2001 itself and used it to transcend 
+and overthrow all the political institutions. Titor wanted to make Grid, as a tool to connect and learn
+about enemy locations but more importantly as a symbol. A symbol of resistance. Within days, he was ready
+with a basic prototype. He and a few more survivors planned to test it on one of their missions to steal SERN
+equipment.The plan was simple but there was one flaw left in Grid which was causing a delay in messages. And 
+this flaw became a major problem as Grid did not notify about enemey movement patterns in time. And then they were 
+spotted. The whole facility was blaring alarms and in a matter of seconds a quite and scientific lab was filled
+with mercs. The team managed to pull off a sneaky escape. They decided to resort to the last option, go back in time
+and stop all this from happening. 
+<br>
+We learnt about this on @channel and thought we should help regardless of how crazy and unbelievable it sounds. So we made
+Grid, or rather fixed it and tweaked it. The delay bug was squashed, a few neat features were added along with a sweet UI.
+In case John fails to defeat the current SERN, he would still have a battle ready Grid. A symbol of resistance. 
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+<div id="container_0"></div>
+
+
+<script type="text/javascript">
+    $('html,body').css('overflow-y','hidden');
+</script>
+
+
+<script type="text/javascript">
+    window.onload = function(){
+        
+        var elem1 = $('#elpsycongroo > h1');
+        var elem2 = $('#elpsycongroo > p');
+        
+        $({blurRadius: 0}).animate({blurRadius: 10}, {
+        duration: 100,
+        easing: 'swing',
+        step: function() {
+            $('.frontvid').css({
+                //"-webkit-filter": "blur("+this.blurRadius+"px)",
+                //"filter": "blur("+this.blurRadius+"px)"
+            });
+            },
+        complete: function(){
+            //$('#mainElem').css({opacity: 0.0}).animate({opacity: 1.0},1000,'swing');
+            $('#elpsycongroo > h1').addClass('animated slideInRight').css({
+                '-webkit-animation-duration':'500ms',
+                'animation-duration':'500ms',
+                '-webkit-animation-delay': '1s',
+                'animation-delay': '1s',
+            });
+        }
+        });
+        $('#overlay').css({opacity: 0.0}).animate({opacity: 1.0},1000,'swing');
+        
+    }
+</script>
